@@ -98,118 +98,128 @@ body{
 }
 
 /* ===================================
-   HERO
+    HERO SECTION
 =================================== */
-
-.hero{
-
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0; /* Menambah padding agar aman dari Navbar fixed */
 }
 
-.hero h5{
-
-    color:var(--primary);
-    margin-bottom:15px;
-
+.hero h5 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-.hero h1{
-
-    font-size:65px;
-    font-weight:700;
-
+.hero h1 {
+    font-size: 3.5rem; /* ~56px agar lebih fleksibel */
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.hero h3{
-
-    color:var(--gray);
-    margin-top:15px;
-    margin-bottom:25px;
-
+.hero h3 {
+    color: var(--gray);
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
-.hero p{
-
-    color:#b5bfd2;
-    line-height:30px;
-
+.hero p {
+    color: #b5bfd2;
+    line-height: 1.8;
 }
 
-.hero-btn{
-
-    margin-top:35px;
-
+.hero-btn {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px; /* Menggunakan gap agar jarak antar tombol lebih konsisten */
+    flex-wrap: wrap;
 }
 
-.btn-red{
-
-    background:var(--primary);
-    color:white;
-    padding:14px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    margin-right:15px;
-    transition:.3s;
-
+.btn-red {
+    background: var(--primary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    border: 2px solid var(--primary);
 }
 
-.btn-red:hover{
-
-    transform:translateY(-5px);
-    box-shadow:0 0 30px rgba(239,68,68,.4);
-
+.btn-red:hover {
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
 }
 
-.btn-outline{
-
-    border:2px solid var(--primary);
-    color:white;
-    padding:14px 30px;
-    border-radius:50px;
-    text-decoration:none;
-    transition:.3s;
-
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
 }
 
-.btn-outline:hover{
-
-    background:var(--primary);
-
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-5px);
 }
 
 /* ===================================
-   PROFILE IMAGE
+    PROFILE IMAGE
 =================================== */
-
-.profile{
-
-    position:relative;
-    display:flex;
-    justify-content:center;
-
+.profile {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile img{
-
-    width:420px;
-    position:relative;
-    z-index:2;
-
+.profile img {
+    width: 100%;
+    max-width: 420px; /* Supaya tidak melebihi 420px tapi bisa mengecil di HP */
+    height: auto;
+    position: relative;
+    z-index: 2;
 }
 
-.circle{
+.circle {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1; /* Menjaga rasio lingkaran sempurna */
+    background: var(--primary);
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+    filter: blur(30px);
+}
 
-    width:420px;
-    height:420px;
-    background:var(--primary);
-    position:absolute;
-    border-radius:50%;
-    opacity:.2;
-    filter:blur(30px);
+/* ===================================
+    RESPONSIVE MEDIA QUERIES (Mobile)
+=================================== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Memperkecil judul di layar HP */
+    }
+    
+    .hero-btn {
+        flex-direction: column; /* Tombol bertumpuk rapi di HP */
+    }
 
+    .btn-red, .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ===================================
@@ -553,134 +563,100 @@ padding:12px 0;
         CONTACT
 ========================== */
 
-.contact-card{
-
-    background:#1E293B;
-
-    border-radius:20px;
-
-    padding:35px;
-
-    height:100%;
-
+/*=========================
+    CONTACT SECTION
+==========================*/
+.contact-card {
+    background: #1E293B;
+    border-radius: 20px;
+    padding: 35px;
+    height: 100%;
 }
 
-.contact-card h3{
-
-    color:white;
-
+.contact-card h3,
+.contact-card h4 {
+    color: white;
 }
 
-.contact-card p{
-
-    color:#CBD5E1;
-
+.contact-card p {
+    color: #CBD5E1;
 }
 
-.contact-item{
-
-    display:flex;
-
-    align-items:center;
-
-    margin-bottom:25px;
-
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.contact-item i{
-
-    width:60px;
-
-    height:60px;
-
-    background:#ef4444;
-
-    color:white;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:24px;
-
-    margin-right:20px;
-
+/* Biar ikon lingkaran tidak lonjong/gepeng di HP */
+.contact-item i {
+    width: 60px;
+    height: 60px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-right: 20px;
+    flex-shrink: 0; 
 }
 
-.contact-item h6{
-
-    color:white;
-
-    margin-bottom:5px;
-
+.contact-item h6 {
+    color: white;
+    margin-bottom: 5px;
 }
 
-.social-icon a{
-
-    display:inline-flex;
-
-    width:50px;
-
-    height:50px;
-
-    border-radius:50%;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:#334155;
-
-    color:white;
-
-    margin-right:10px;
-
-    transition:.3s;
-
-    text-decoration:none;
-
+/* Biar teks email otomatis melipat ke bawah di layar sempit */
+.contact-item p {
+    margin-bottom: 0;
+    word-break: break-word;
 }
 
-.social-icon a:hover{
-
-    background:#ef4444;
-
-    transform:translateY(-5px);
-
+/* Social Icons */
+.social-icon {
+    display: flex;
+    gap: 15px;
 }
 
-.form-control{
-
-    background:#0F172A;
-
-    border:none;
-
-    color:white;
-
-    padding:15px;
-
+.social-icon a {
+    width: 55px;
+    height: 55px;
+    background: #334155;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: .3s;
+    flex-shrink: 0;
 }
 
-.form-control:focus{
-
-    background:#0F172A;
-
-    color:white;
-
-    box-shadow:none;
-
-    border:1px solid #ef4444;
-
+.social-icon a:hover {
+    background: #ef4444;
+    transform: translateY(-5px);
 }
 
-.form-control::placeholder{
+/* Form Control */
+.form-control {
+    background: #0F172A;
+    border: none;
+    color: white;
+    padding: 15px;
+}
 
-    color:#94A3B8;
+.form-control:focus {
+    background: #0F172A;
+    color: white;
+    box-shadow: none;
+    border: 1px solid #ef4444;
+}
 
+.form-control::placeholder {
+    color: #94A3B8;
 }
 
 /*=========================
@@ -1126,3 +1102,36 @@ padding:12px 0;
 
 }
 
+/* about  */
+.btn-red {
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    border: 2px solid var(--primary);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* Biar rapi juga saat dibuka dari HP/Smartphone */
+@media (max-width: 576px) {
+    .btn-red, .btn-outline {
+        width: 100%; /* Tombol menyesuaikan lebar layar HP */
+        text-align: center;
+    }
+}
